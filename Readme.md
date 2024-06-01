@@ -56,3 +56,4 @@ Inlämning:
 Inlämning sker på Awesomo med en länk till ert Github repo med er kod senast fredag 7/6 23:59.
 Använder ni .env och har lagt till denna i .gitignore, se till att ha en .env.example fil på github med alla variabelnamn som fanns i .env
 dokumentation för att importera/exportera data till postman: https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-and-exporting-overview/#importing-data-into-postman
+# Examinationsuppgift-Databaser-Filmrecentionsplattform
