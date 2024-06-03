@@ -29,4 +29,5 @@ const reviewSchema = new mongoose.Schema({
 
 const Review = mongoose.model('Review', reviewSchema);
 module.exports = Review;
+
 // module.exports = mongoose.model('Review', reviewSchema); // mer kompakt sätt att göra de två raderna ovan

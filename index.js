@@ -5,11 +5,12 @@ const app = express()
 const connectDB = require('./Database/database')
 
 const userRoute = require('./Routes/userRoute')
+const movieRoute = require('./Routes/movieRoute')
 
 app.use (express.json())
 app.use(bodyparser.json())
 app.use('/api/user', userRoute) 
-app.use('/api/movie', movieRoute) // här är jag nu
+app.use('/api/movie', movieRoute) 
 //app.use('/api/review', reviewRoute)
 
 connectDB()
