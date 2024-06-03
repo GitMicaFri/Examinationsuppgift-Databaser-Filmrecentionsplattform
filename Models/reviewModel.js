@@ -20,9 +20,13 @@ const reviewSchema = new mongoose.Schema({
     comment: {
         type: String,
         required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
 }, { timestamps: true}) // aktiverar både created at och updated at
 
-//const Review = mongoose.model('Review', reviewSchema);
-//module.exports = Review;
-module.exports = mongoose.model('Review', reviewSchema); // mer kompakt sätt att göra de två raderna ovan
+const Review = mongoose.model('Review', reviewSchema);
+module.exports = Review;
+// module.exports = mongoose.model('Review', reviewSchema); // mer kompakt sätt att göra de två raderna ovan

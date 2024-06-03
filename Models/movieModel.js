@@ -21,10 +21,18 @@ const movieSchema = new mongoose.Schema({
                 return v >= 1800 && v <= new Date().getFullYear();
             },message: props => `{props.value} is not a valid release year!`        }
     },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    
     genre: [{ // lista av strängar, tillåter flera genre
         type: String,
         required: true
     }]
 })
 
-module.exports = mongoose.model('Movie', movieSchema);
+const Movie = mongoose.model('Movie', movieSchema);
+module.exports = Movie;
+
+// module.exports = mongoose.model('Movie', movieSchema);

@@ -1,6 +1,15 @@
-
+const Movie = require('../Models/movieModel')
 
 // POST /movies: Lägg till en ny film.
+exports.addNewMovie = async (req, res) => {
+    try {
+        const newMovie = new Movie(req.body)
+        await newMovie.save()
+        res.status(200).send('Successfully added new movie.')
+    } catch(err) {
+        res.status(400).send(err)
+    }
+}
 
 // GET /movies: Hämta en lista med alla filmer.
 
