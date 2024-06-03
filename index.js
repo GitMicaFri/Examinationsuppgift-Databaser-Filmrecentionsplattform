@@ -6,12 +6,13 @@ const connectDB = require('./Database/database')
 
 const userRoute = require('./Routes/userRoute')
 const movieRoute = require('./Routes/movieRoute')
+const reviewRoute = require('./Routes/reviewRoute')
 
 app.use (express.json())
 app.use(bodyparser.json())
 app.use('/api/user', userRoute) 
 app.use('/api/movie', movieRoute) 
-//app.use('/api/review', reviewRoute)
+app.use('/api/review', reviewRoute)
 
 connectDB()
 
