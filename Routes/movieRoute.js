@@ -5,5 +5,7 @@ const movieController = require('../Controllers/movieController')
 // baseURL: /api/movie
 
 router.post('/', movieController.addNewMovie)
+router.get('/', movieController.getAllMovies)
+router.get('/:id', movieController.getMovieById)
 
 module.exports = router
