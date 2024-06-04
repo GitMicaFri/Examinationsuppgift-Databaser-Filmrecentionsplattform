@@ -32,6 +32,22 @@ exports.getMovieById = async (req, res) => {
 }
 
 // PUT /movies/:id: Uppdatera en specifik film.
+exports.updateMovieById = async (req, res) => {
+    try {
+        const updateMovie = await Movie.findOneAndUpdate(
+            { _id: req.params.id },
+            req.body,
+            {new: true} // options: returnerar updaterat dokument
+            )
+            if (!updateMovie) {
+                return res.status(404).send("Not found")
+            }
+            res.status(200).json({message: `Update completed`, updateMovie})
+        
+    } catch(err) {
+        res.status(400).send(err)
+    }
+}
 
 // GET /movies/:id/reviews: Hämta alla recensioner för en specifik film.
 
