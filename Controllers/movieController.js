@@ -1,4 +1,5 @@
 const Movie = require('../Models/movieModel')
+const Review = require('../Models/reviewModel')
 
 // POST /movies: Lägg till en ny film.
 exports.addNewMovie = async (req, res) => {
@@ -50,5 +51,24 @@ exports.updateMovieById = async (req, res) => {
 }
 
 // GET /movies/:id/reviews: Hämta alla recensioner för en specifik film.
+exports.getAllReviewsForMovieById = async (req, res) => {
+    try {
+        const reviews = await Review.findOneAndDelete({movieId: req.params._id})
+        if (!reviews.length) {
+            return res.status(404).json({message: `We could not find any reviews for the selected movie.`})
+        }
+        res.status(200).json(reviews)
+    } catch(err) {
+        res.status(400).json(err)
+    }
+}
 
 // DELETE /movies/:id: Ta bort en specifik film.
+exports.deleteMovieById = async (req, res) => {
+    try {
+    const deleteMovie = await Movie.findOneAndDelete({ _id:req.params.id})
+    res.status(200).json({message: `Movie deleted`, deleteMovie})
+    } catch(err) {
+        res.status(400).send(err)
+    }
+}

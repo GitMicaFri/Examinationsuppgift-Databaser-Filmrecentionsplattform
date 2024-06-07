@@ -5,5 +5,7 @@ const userController = require('../Controllers/userController')
 
 router.post('/', userController.createUser) 
 
+// här ska loginUser vara
+
 
 module.exports = router

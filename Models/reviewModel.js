@@ -27,7 +27,7 @@ const reviewSchema = new mongoose.Schema({
     }
 }, { timestamps: true}) // aktiverar både created at och updated at
 
-const Review = mongoose.model('Review', reviewSchema);
-module.exports = Review;
+const Review = mongoose.model('Review', reviewSchema)
+module.exports = Review
 
 // module.exports = mongoose.model('Review', reviewSchema); // mer kompakt sätt att göra de två raderna ovan
