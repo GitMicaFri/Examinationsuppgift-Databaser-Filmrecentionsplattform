@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "a2e988ec-a36b-4c6b-88f7-ac6f97271a63",
+		"name": "Filmrecentionsplattform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31553860"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"Pim\",\r\n    \"email\": \"pim@mail.com\",\r\n    \"password\": \"pim123\",\r\n    \"role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5700/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5700",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"pim@mail.com\",\r\n    \"password\": \"pim123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5700/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5700",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNewMovie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Erin Brockovich\",\r\n    \"director\": \"Stephen Soderberg\",\r\n    \"releaseYear\": 2000,\r\n    \"genre\": \"Drama, Biography\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5700/api/movie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5700",
+					"path": [
+						"api",
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllMovies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5700/api/movie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5700",
+					"path": [
+						"api",
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateMovieById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Forrest Gump\",\r\n    \"director\": \"Robert Zemeckis\",\r\n    \"releaseYear\": 1994,\r\n    \"genre\": \"Drama, Oscar winner\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5700/api/movie/665dc484c51047d60e7851f5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5700",
+					"path": [
+						"api",
+						"movie",
+						"665dc484c51047d60e7851f5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMovieById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5700/api/movie/665dc303c51047d60e7851f1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5700",
+					"path": [
+						"api",
+						"movie",
+						"665dc303c51047d60e7851f1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteMovieById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5700/api/movie/665dc7a5c51047d60e7851fb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5700",
+					"path": [
+						"api",
+						"movie",
+						"665dc7a5c51047d60e7851fb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNewReview",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movieId\": \"665dca71c51047d60e78520b\",\r\n    \"userId\": \"665dcb6bc51047d60e785211\",\r\n    \"rating\": \"10/10\",\r\n    \"comment\": \"Galet bra film!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5700/api/review",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5700",
+					"path": [
+						"api",
+						"review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllReviewsByMovieId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5700/api/movie/665dc7d1c51047d60e7851fd/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5700",
+					"path": [
+						"api",
+						"movie",
+						"665dc7d1c51047d60e7851fd",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getReviewById",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "updateRewiewById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movieId\": \"665dca71c51047d60e78520b\",\r\n    \"userId\": \"665dcb6bc51047d60e785211\",\r\n    \"rating\": \"10/10\",\r\n    \"comment\": \"Galet vilken bra film!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5700/api/review/665dcf42aa6510d1ee994684",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5700",
+					"path": [
+						"api",
+						"review",
+						"665dcf42aa6510d1ee994684"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteReviewById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5700/api/review/6662e74bee900edbdf90c327",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5700",
+					"path": [
+						"api",
+						"review",
+						"6662e74bee900edbdf90c327"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -25,7 +25,7 @@ const reviewSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
-}, { timestamps: true}) // aktiverar både created at och updated at
+}, { timestamps: true }) // aktiverar både created at och updated at
 
 const Review = mongoose.model('Review', reviewSchema)
 module.exports = Review

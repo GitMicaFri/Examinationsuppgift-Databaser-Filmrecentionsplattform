@@ -7,6 +7,7 @@ exports.addNewMovie = async (req, res) => {
         const newMovie = new Movie(req.body)
         await newMovie.save()
         res.status(200).send('Successfully added new movie.')
+
     } catch(err) {
         res.status(400).send(err)
     }
@@ -17,6 +18,7 @@ exports.getAllMovies = async (req, res) => {
     try {
         const allMovies = await Movie.find()
         res.status(200).json({message: `Listing all movies`, allMovies})
+
     } catch(err) {
         res.status(400).send(err)
     }
@@ -27,6 +29,7 @@ exports.getMovieById = async (req, res) => {
     try {
         const movieById = await Movie.findById(req.params.id)
         res.status(200).json({message: `Here is your movie`, movieById})
+
     } catch(err) {
         res.status(400).send(err)
     }
@@ -53,11 +56,12 @@ exports.updateMovieById = async (req, res) => {
 // GET /movies/:id/reviews: Hämta alla recensioner för en specifik film.
 exports.getAllReviewsForMovieById = async (req, res) => {
     try {
-        const reviews = await Review.findOneAndDelete({movieId: req.params._id})
+        const reviews = await Review.find({ movieId: req.params.id })
         if (!reviews.length) {
             return res.status(404).json({message: `We could not find any reviews for the selected movie.`})
         }
         res.status(200).json(reviews)
+
     } catch(err) {
         res.status(400).json(err)
     }
@@ -68,6 +72,7 @@ exports.deleteMovieById = async (req, res) => {
     try {
     const deleteMovie = await Movie.findOneAndDelete({ _id:req.params.id})
     res.status(200).json({message: `Movie deleted`, deleteMovie})
+
     } catch(err) {
         res.status(400).send(err)
     }
