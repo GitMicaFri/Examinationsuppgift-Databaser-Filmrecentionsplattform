@@ -40,7 +40,7 @@ const getAllReviewsForMovieById = async (movieId) => {
     return reviews
 }
 
-// GET /movies/ratings: Hämta en lista med alla filmer och 
+// GET /movies/ratings: Hämta en lista med alla filmer och ratings
 
 module.exports = {
     getAllMovies,
